@@ -1,0 +1,33 @@
+.hero {
+  max-height: 430px;
+  margin: auto;
+
+  padding: 80px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.heroContent {
+  width: 65%;
+}
+
+.ytLink {
+  color: #00a4f0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: -5px;
+  font-size: 17px;
+}
+.ytLink > span {
+  padding-top: 5px;
+  color: red;
+  font-size: 20px;
+}
+.heroTitle {
+  color: #0a3254;
+  font-size: 47px;
+  margin: 0;
+  line-height: 1.2;
+}

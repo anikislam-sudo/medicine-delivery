@@ -1,0 +1,188 @@
+.searchbar {
+  margin-top: 0;
+}
+
+.searchbar > div {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.searchbar > div > svg {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  background-color: rgb(12, 87, 157);
+  padding: 17px 30px;
+  border-radius: 0 10px 10px 0;
+  /* border: 1px solid var(--primary); */
+  color: var(--white);
+  font-size: 19px;
+}
+
+.searchbar > div > span {
+  position: absolute;
+  color: var(--red);
+  font-size: 22px;
+  font-weight: 500;
+  right: 100px;
+  top: 10px;
+  transition: 300ms;
+  /* border: 3px; */
+}
+
+.searchbar > div > span:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1.4);
+  transition: 300ms;
+}
+
+.searchbar > div > input {
+  /* width: 90%; */
+  padding: 16px;
+  padding-left: 15px;
+  border-radius: 10px;
+  outline: none;
+  background-color: white;
+
+  border: none;
+  color: #848282;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 102px;
+  /* margin: auto; */
+  width: 1127px;
+  margin-bottom: 10px;
+}
+
+.searchbar > div > input::placeholder {
+  color: var(--dark);
+  opacity: 0.8;
+}
+
+@media (max-width: 500px) {
+  .searchbar > div {
+    position: relative;
+  }
+
+  .searchbar > div > span {
+    position: absolute;
+    color: var(--red);
+    font-size: 18px;
+    font-weight: 500;
+    right: 20px;
+    top: 5px;
+    z-index: 10;
+    transition: 300ms;
+  }
+
+  .searchbar > div > input {
+    position: relative;
+    display: block;
+    padding: 12px 30px;
+    padding-left: 8%;
+    border-radius: 50px;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .searchbar > div > svg {
+    display: none;
+  }
+}
+@media (min-width: 501px) and (max-width: 800px) {
+  .searchbar > div {
+    position: relative;
+  }
+
+  .searchbar > div > span {
+    position: absolute;
+    color: var(--red);
+    font-size: 19px;
+    font-weight: 500;
+    right: 20px;
+    top: 5px;
+    z-index: 10;
+    transition: 300ms;
+  }
+
+  .searchbar > div > input {
+    position: relative;
+    display: block;
+    padding: 12px 30px;
+    padding-left: 8%;
+    border-radius: 50px;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    margin: 0 auto;
+    min-width: 24em;
+  }
+
+  .searchbar > div > svg {
+    display: none;
+  }
+}
+@media (min-width: 801px) and (max-width: 1400px) {
+  .searchbar {
+    margin-top: 0;
+  }
+
+  .searchbar > div {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .searchbar > div > svg {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    background-color: rgb(12, 87, 157);
+    padding: 21px 26px;
+    border-radius: 0 50px 50px 0;
+    color: var(--white);
+    font-size: 17px;
+  }
+
+  .searchbar > div > span {
+    position: absolute;
+    color: var(--red);
+    font-size: 22px;
+    font-weight: 500;
+    right: 100px;
+    top: 10px;
+    transition: 300ms;
+    /* border: 3px; */
+  }
+
+  .searchbar > div > span:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    transform: scale(1.4);
+    transition: 300ms;
+  }
+
+  .searchbar > div > input {
+    padding: 20px;
+    padding-left: 22.5%;
+    border-radius: 50px;
+    outline: none;
+    border: 1px solid var(--primary);
+    border: none;
+    color: var(--dark);
+    font-size: 15px;
+    font-weight: 500;
+    width: 530px;
+  }
+
+  .searchbar > div > input::placeholder {
+    color: var(--dark);
+    opacity: 0.8;
+  }
+}

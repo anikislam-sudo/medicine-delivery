@@ -1,9 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  --deep-primary: rgb(12, 87, 157);
+  --primary: #457dc3;
+  --secondary: #419cd9;
+  --blue1: #535994;
+  --blue2: #5f74ad;
+  --blue3: #457dc3;
+  --blue4: #5f91ad;
+  --blue5: #77c0d1;
+  --blue6: #2f88ff;
+  --light-blue: #eff6ff;
+
+  --soft-blue: #018cff;
+  --bg-blue: rgba(65, 156, 217, 0.8);
+  --dark: #333;
+  --dark-blue: #23395d;
+
+  --dark-grey: #555;
+  --grey: #7987a1;
+  --light-grey: #aebacf;
+  --light-gray1: #666666;
+  --light-gray2: #f8fafc;
+
+  --dark-light: #dee2e9;
+  --dark-light1: #d5e5fa;
+  --dark-light2: #c5daf5;
+  --dark-light3: #edf2f7;
+
+  --light: #f0f0f0;
+  --light-low: #f8f8f8;
+  --light-low1: #f8fafc;
+
+  --white: #fff;
+  --green: #4ace86;
+  --green2: #65d296;
+  --red: #ef5455;
+  --orange: #ff4500;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: #f9f9f9;
 }
 

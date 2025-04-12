@@ -10,12 +10,11 @@
 
 .searchbar > div > svg {
   position: absolute;
-  bottom: 10px;
-  right: 0;
+  bottom: 0px;
+  right: 51px;
   background-color: rgb(12, 87, 157);
   padding: 17px 30px;
   border-radius: 0 10px 10px 0;
-  /* border: 1px solid var(--primary); */
   color: var(--white);
   font-size: 19px;
 }
@@ -39,21 +38,17 @@
 }
 
 .searchbar > div > input {
-  /* width: 90%; */
   padding: 16px;
   padding-left: 15px;
   border-radius: 10px;
   outline: none;
   background-color: white;
-
   border: none;
   color: #848282;
   font-size: 18px;
   font-weight: 500;
-  margin-left: 102px;
-  /* margin: auto; */
-  width: 1127px;
-  margin-bottom: 10px;
+  margin-right: 27px;
+  width: 89%;
 }
 
 .searchbar > div > input::placeholder {

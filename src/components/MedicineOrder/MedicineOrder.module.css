@@ -74,12 +74,11 @@
 
 /* Search Input Container */
 .searchContainer {
-  /* width: 90%; */
-  margin: auto;
+  /* margin: auto;
   display: flex;
 
   border-radius: 4px;
-  margin-bottom: -1.5em;
+  margin-bottom: -1.5em; */
 }
 
 .medicineShow {

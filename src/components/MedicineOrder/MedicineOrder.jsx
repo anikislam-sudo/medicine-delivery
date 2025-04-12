@@ -10,6 +10,7 @@ const MedicineOrder = ({
   setSearch,
   setCross,
   handleSearchChange,
+  setMedicineLines,
 }) => {
   return (
     <div className={classes.wrapper}>

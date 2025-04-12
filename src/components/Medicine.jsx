@@ -150,8 +150,13 @@ const Medicine = ({ data, search_medicine }) => {
         cross={cross}
         setCross={setCross}
         handleSearchChange={handleSearchChange}
+        setMedicineLines={setMedicineLines}
       />
-      <Cart />
+      <Cart
+        medicineLines={medicineLines}
+        removeItem={removeItem}
+        setMedicineLines={setMedicineLines}
+      />
     </div>
   );
 };

@@ -1,80 +1,80 @@
 import React, { useState } from "react";
 import classes from "./Cart.module.css";
 
-const Cart = () => {
+const Cart = ({ medicineLines, removeItem, setMedicineLines }) => {
   // Sample medicine data array
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Aboitb",
-      manufacturer: "Veritas Pharmaceuticals Ltd.",
-      dosage: "60 mg",
-      type: "Capsule",
-      pricePerUnit: 10,
-      quantity: 10,
-      total: 200,
-      packageType: "Unit",
-    },
-    {
-      id: 2,
-      name: "Aboitb",
-      manufacturer: "Veritas Pharmaceuticals Ltd.",
-      dosage: "60 mg",
-      type: "Capsule",
-      pricePerUnit: 100,
-      quantity: 2,
-      total: 200,
-      packageType: "Strip",
-    },
-    {
-      id: 3,
-      name: "Aboitb",
-      manufacturer: "Veritas Pharmaceuticals Ltd.",
-      dosage: "60 mg",
-      type: "Capsule",
-      pricePerUnit: 1000,
-      quantity: 1,
-      total: 1000,
-      packageType: "Packet",
-    },
-    {
-      id: 4,
-      name: "Napa One",
-      manufacturer: "Veritas Pharmaceuticals Ltd.",
-      dosage: "60 mg",
-      type: "Capsule",
-      pricePerUnit: 245,
-      quantity: 2,
-      total: 490,
-      packageType: "Strip",
-    },
-    {
-      id: 5,
-      name: "Aboitb",
-      manufacturer: "Veritas Pharmaceuticals Ltd.",
-      dosage: "60 mg",
-      type: "Capsule",
-      pricePerUnit: 1000,
-      quantity: 10,
-      total: 2000,
-      packageType: "Packet",
-    },
-    {
-      id: 6,
-      name: "Aboitb",
-      manufacturer: "Veritas Pharmaceuticals Ltd.",
-      dosage: "60 mg",
-      type: "Capsule",
-      pricePerUnit: 1000,
-      quantity: 10,
-      total: 2000,
-      packageType: "Packet",
-    },
-  ]);
+  // const [cartItems, setCartItems] = useState([
+  //   {
+  //     id: 1,
+  //     name: "Aboitb",
+  //     manufacturer: "Veritas Pharmaceuticals Ltd.",
+  //     dosage: "60 mg",
+  //     type: "Capsule",
+  //     pricePerUnit: 10,
+  //     quantity: 10,
+  //     total: 200,
+  //     packageType: "Unit",
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Aboitb",
+  //     manufacturer: "Veritas Pharmaceuticals Ltd.",
+  //     dosage: "60 mg",
+  //     type: "Capsule",
+  //     pricePerUnit: 100,
+  //     quantity: 2,
+  //     total: 200,
+  //     packageType: "Strip",
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Aboitb",
+  //     manufacturer: "Veritas Pharmaceuticals Ltd.",
+  //     dosage: "60 mg",
+  //     type: "Capsule",
+  //     pricePerUnit: 1000,
+  //     quantity: 1,
+  //     total: 1000,
+  //     packageType: "Packet",
+  //   },
+  //   {
+  //     id: 4,
+  //     name: "Napa One",
+  //     manufacturer: "Veritas Pharmaceuticals Ltd.",
+  //     dosage: "60 mg",
+  //     type: "Capsule",
+  //     pricePerUnit: 245,
+  //     quantity: 2,
+  //     total: 490,
+  //     packageType: "Strip",
+  //   },
+  //   {
+  //     id: 5,
+  //     name: "Aboitb",
+  //     manufacturer: "Veritas Pharmaceuticals Ltd.",
+  //     dosage: "60 mg",
+  //     type: "Capsule",
+  //     pricePerUnit: 1000,
+  //     quantity: 10,
+  //     total: 2000,
+  //     packageType: "Packet",
+  //   },
+  //   {
+  //     id: 6,
+  //     name: "Aboitb",
+  //     manufacturer: "Veritas Pharmaceuticals Ltd.",
+  //     dosage: "60 mg",
+  //     type: "Capsule",
+  //     pricePerUnit: 1000,
+  //     quantity: 10,
+  //     total: 2000,
+  //     packageType: "Packet",
+  //   },
+  // ]);
 
-  // Calculate order summary
+  // // Calculate order summary
   const calculateSubtotal = () => {
-    return cartItems.reduce((sum, item) => sum + item.total, 0);
+    return medicineLines.reduce((sum, item) => sum + item.unit_price, 0);
   };
 
   const subtotal = calculateSubtotal();
@@ -83,15 +83,16 @@ const Cart = () => {
   const total = subtotal - discount + shipping;
 
   const removeAll = () => {
-    setCartItems([]);
+    setMedicineLines([]);
     console.log("Remove all items");
   };
 
   const decreaseQuantity = (id) => {
-    setCartItems((prevItems) =>
+    setMedicineLines((prevItems) =>
       prevItems.map((item) => {
-        if (item.id === id && item.quantity > 1) {
-          const newQuantity = item.quantity - 1;
+        const quantity = parseInt(item.quantity, 10); // ensure it's an integer
+        if (item.id === id && quantity > 1) {
+          const newQuantity = quantity - 1;
           return {
             ...item,
             quantity: newQuantity,
@@ -105,10 +106,11 @@ const Cart = () => {
   };
 
   const increaseQuantity = (id) => {
-    setCartItems((prevItems) =>
+    setMedicineLines((prevItems) =>
       prevItems.map((item) => {
+        const quantity = parseInt(item.quantity, 10); // ensure it's an integer
         if (item.id === id) {
-          const newQuantity = item.quantity + 1;
+          const newQuantity = quantity + 1;
           return {
             ...item,
             quantity: newQuantity,
@@ -121,11 +123,14 @@ const Cart = () => {
     console.log(`Increase quantity for item ${id}`);
   };
 
-  const removeItem = (id) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-    console.log(`Remove item ${id}`);
-  };
-
+  // const removeItem = (id) => {
+  //   setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  //   console.log(`Remove item ${id}`);
+  // };
+  console.log(
+    medicineLines.filter((med) => med.item.newQuantity),
+    "a"
+  );
   return (
     <div className={classes.medOrder}>
       <div className={classes.cartSection}>
@@ -149,7 +154,7 @@ const Cart = () => {
                   <div className={classes.cartTitle}>
                     Cart{" "}
                     <span className={classes.itemCount}>
-                      {cartItems.length} items
+                      {medicineLines.length} items
                     </span>
                   </div>
                   <button className={classes.removeAllBtn} onClick={removeAll}>
@@ -160,7 +165,7 @@ const Cart = () => {
 
               {/* Cart Items - Scrollable */}
               <div className={classes.cartItems}>
-                {cartItems.map((item) => (
+                {medicineLines.map((item) => (
                   <div className={classes.cartItem} key={item.id}>
                     <div className={classes.itemDetails}>
                       <h4>{item.name}</h4>
@@ -190,7 +195,7 @@ const Cart = () => {
                         </button>
                       </div>
                       <div className={classes.itemTotal}>
-                        <span>৳{item.total.toFixed(2)}</span>
+                        <span>৳{item.unit_price.toFixed(2)}</span>
                         <button
                           onClick={() => removeItem(item.id)}
                           className={classes.removeBtn}
@@ -209,7 +214,7 @@ const Cart = () => {
           <div className={classes.cartSummary}>
             <div className={classes.summaryRow}>
               <span className={classes.label}>
-                Subtotal ({cartItems.length} items)
+                Subtotal ({medicineLines.length} items)
               </span>
               <span className={classes.value}>৳ {subtotal.toFixed(2)}</span>
             </div>

@@ -1,0 +1,73 @@
+.pageContainer {
+  width: 81%;
+  margin: auto;
+}
+
+.discountCardsContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+  width: calc(25% - 12px);
+}
+
+/* Background colors */
+.bgBlue {
+  background-color: #e6f0ff;
+}
+
+.bgPurple {
+  background-color: #e8e1fb;
+}
+
+.bgPeach {
+  background-color: #fff0e3;
+}
+
+.bgGreen {
+  background-color: #d8f9e3;
+}
+
+/* Icon styles */
+.icon {
+  font-size: 28px;
+}
+
+.iconBlue {
+  color: #007bff;
+}
+
+.iconPurple {
+  color: #4b0082;
+}
+
+.iconOrange {
+  color: #ff6600;
+}
+
+.iconGreen {
+  color: #28a745;
+}
+
+/* Text styles */
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: #000;
+}
+
+.subtitle {
+  font-size: 13px;
+  margin: 4px 0 0;
+  color: #333;
+}

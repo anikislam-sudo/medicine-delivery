@@ -4,6 +4,7 @@ import Features from "./Features/Features";
 import MedicineOrder from "./MedicineOrder/MedicineOrder";
 import Cart from "./Cart/Cart";
 import { useRouter } from "next/router";
+import DiscountCards from "./DiscountCards/DiscountCards";
 
 const Medicine = ({ data, search_medicine }) => {
   const [search, setSearch] = useState("" || search_medicine);
@@ -152,6 +153,7 @@ const Medicine = ({ data, search_medicine }) => {
         handleSearchChange={handleSearchChange}
         setMedicineLines={setMedicineLines}
       />
+      <DiscountCards />
       <Cart
         medicineLines={medicineLines}
         removeItem={removeItem}

@@ -5,6 +5,7 @@ import MedicineOrder from "./MedicineOrder/MedicineOrder";
 import Cart from "./Cart/Cart";
 import { useRouter } from "next/router";
 import DiscountCards from "./DiscountCards/DiscountCards";
+import Testimonial from "./Testimonial/Testimonial";
 
 const Medicine = ({ data, search_medicine }) => {
   const [search, setSearch] = useState("" || search_medicine);
@@ -159,6 +160,7 @@ const Medicine = ({ data, search_medicine }) => {
         removeItem={removeItem}
         setMedicineLines={setMedicineLines}
       />
+      <Testimonial />
     </div>
   );
 };

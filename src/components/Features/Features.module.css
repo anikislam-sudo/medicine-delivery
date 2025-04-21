@@ -64,3 +64,45 @@
   padding-left: 32px;
   line-height: 1.4;
 }
+/* Add these media queries to your existing CSS */
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: 95%;
+  }
+
+  .features {
+    flex-direction: column;
+    padding: 20px 15px;
+    gap: 25px;
+  }
+
+  .feature {
+    width: 100%;
+    padding: 0;
+  }
+
+  /* Remove the divider between features when in column layout */
+  .feature:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Alternative: you could add a horizontal divider instead */
+  .feature:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .titleRow {
+    margin-bottom: 5px;
+  }
+
+  .featureTitle {
+    font-size: 16px;
+  }
+
+  .featureDescription {
+    font-size: 13px;
+    padding-left: 32px;
+  }
+}

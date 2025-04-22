@@ -159,6 +159,12 @@ const Medicine = ({ data, search_medicine }) => {
         medicineLines={medicineLines}
         removeItem={removeItem}
         setMedicineLines={setMedicineLines}
+        activeStyle={activeStyle}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        api={api}
+        setActiveStyle={setActiveStyle}
+        handleSubmit={handleSubmit}
       />
       <Testimonial />
     </div>
